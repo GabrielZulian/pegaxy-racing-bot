@@ -1,4 +1,5 @@
 # Sobre:
+
 Esse bot foi desenvolvido em Python e serve somente para automatizar as corridas com os pegaxies, no momento está programado para 1 pegaxy somente, porém a ideia é implementar para outros posteriormente.
 
 Decidi publicá-lo gratuimente e mantê-lo através de donates de quem achou útil e/ou para quem teve seu tempo poupado e também através de pull requests de quem quiser ajudar com o código.
@@ -8,6 +9,7 @@ Decidi publicá-lo gratuimente e mantê-lo através de donates de quem achou út
 #### Não me responsabilizo por penalidades que o uso do bot possa trazer, use por sua conta e risco.
 
 # Utilização:
+
 ### Baixe e instale o Python pelo [site](https://www.python.org/downloads/).
 
 Adicione o python ao PATH do windows. O próprio instalador fornece essa opção para adicionar.
@@ -34,7 +36,7 @@ python main.py
 
 Apenas deixe a metamask conectada e em alguma página do jogo e após rodar o comando acima, ele irá começar a interagir com as páginas.
 
-## Como funciona / ajustes?
+## Como funciona / ajustes:
 
 O bot tira screenshots da tela para localizar os botões e poder realizar as operações conforme o estado atual do jogo.
 Caso o bot clique em lugares errados na tela, você pode fornecer o seu próprio print dos botões para a pasta screenshots.
@@ -48,7 +50,9 @@ O mercado de NFTs no Brasil está crescendo, e é nosso papel ajudar e fortalece
 Qualquer ajuda é bem vinda.
 
 ### Wallet (Polygon / BSC):
-#### 0xbd06182D8360FB7AC1B05e871e56c76372510dDf
+
+#### 0x10ab6E4508c69a4d25445631A0eD25F58a16d82F
 
 ### CrypTip:
+
 #### https://pegaxy-bot.cryptip.xyz/
