@@ -1,0 +1,9 @@
+mss==6.1.0
+numpy==1.21.4
+PyAutoGUI==0.9.53
+PyGetWindow==0.0.9
+opencv-python==4.5.4.60
+PyRect==0.1.4
+PyScreeze==0.1.28
+pytweening==1.0.4
+PyYAML==6.0

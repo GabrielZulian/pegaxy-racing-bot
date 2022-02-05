@@ -1,0 +1,11 @@
+#
+#
+time_intervals:
+  #seconds
+  every_movement: 1
+
+  #minutes
+  wait_for_energy_recharge: 70
+
+threshold:
+  default: 0.7
