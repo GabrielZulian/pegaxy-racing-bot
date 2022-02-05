@@ -19,6 +19,23 @@ def move_cursor(x, y, t):
     pyautogui.moveTo(x, y, t, pyautogui.easeInOutQuad)
 
 
+def show(rectangles, img=None):
+    """ Show an popup with rectangles showing the rectangles[(x, y, w, h),...]
+        over img or a printSreen if no img provided. Useful for debugging"""
+
+    if img is None:
+        with mss.mss() as sct:
+            monitor = sct.monitors[0]
+            img = np.array(sct.grab(monitor))
+
+    for (x, y, w, h) in rectangles[0]:
+        cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 255, 255), 2)
+
+    # cv2.rectangle(img, (result[0], result[1]), (result[0] + result[2], result[1] + result[3]), (255,50,255), 2)
+    cv2.imshow('img', img)
+    cv2.waitKey(0)
+
+
 def load_screenshots(dir_path='./screenshots/'):
 
     file_names = listdir(dir_path)
@@ -87,30 +104,63 @@ def main():
     global images
     images = load_screenshots()
 
-    print('Iniciando bot')
+    horses = """
+     _                     _                     _          
+    |_) _   _   _.        |_)  _.  _ o ._   _   |_)  _ _|_  
+    |  (/_ (_| (_| >< \/  | \ (_| (_ | | | (_|  |_) (_) |_  
+            _|        /                     _|           
 
+                /\                       /\                         
+                \ \                     / /
+              __/_/,,;;;`;       ;';;;,,\_\__        
+           ,~(  )  , )~~\|       |/~~( ,  (  )~;
+           ' / / --`--,             .--'-- \ \ `
+            /  \    | '             ` |    /  \      
+    """
+
+    print(horses)
+    print('Starting pegaxy racing bot...')
+    print('Press CTRL + C to stop bot')
+    print('\n')
+
+    print('Acessing racing menu...')
     do_click(images['racing_menu'])
 
+    print('Picking the pegaxy...')
     do_click(images['pick_a_pega'])
+    time.sleep(2)
 
     while True:
-        do_click(images['start'])
 
-        if (do_click['empty_energy']):
-            print('Pegaxy sem energia, aguardando 1 hora...')
+        while True:
+            print('Pressing start...')
+            do_click(images['start'])
 
-        print('Aguardando wallet...')
-        do_click(images['sign'], 30)
+            if (do_click(images['empty_energy'], 0.7)):
+                print('Pegaxy without energy, waiting 1 hour...')
+                time.sleep(configs['wait_for_energy_recharge'])
+                print('Refreshing page...')
+                pyautogui.hotkey('ctrl', 'f5')
+                time.sleep(5)
+                break
+            else:
+                break
 
-        if (do_click(images['find_another'])):
-            print('Falha ao iniciar corrida, procurar outra...')
+        while True:
+            print('Waiting metamask sign...')
+            do_click(images['sign'], 30)
 
-        print('Próxima corrida...')
-        do_click(images['next_match'], 120)
+            if (do_click(images['find_another'])):
+                print('Fail to start race, searching for another...')
+            else:
+                print('Starting race...')
+                break
+
+        time.sleep(30)
+        do_click(images['next_match'], 60)
+        print('Next race...')
 
         time.sleep(3)
-
-    # do_click(images['sign'])
 
 
 if __name__ == '__main__':

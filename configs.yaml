@@ -1,11 +1,10 @@
 #
 #
 time_intervals:
-  #seconds
-  every_movement: 1
-
-  #minutes
-  wait_for_energy_recharge: 70
+  # time to wait for one energy recharge to try racing
+  # minutos
+  wait_for_energy_recharge: 120
 
 threshold:
+  # image comparison factor to find in screen - min 0 - máx 1
   default: 0.7
