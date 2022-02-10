@@ -13,6 +13,7 @@ stream = open("configs.yaml", 'r')
 configs = yaml.safe_load(stream)
 
 th_values = configs['threshold']
+waiting_times = configs['threshold']
 
 
 def move_cursor(x, y, t):
@@ -138,7 +139,7 @@ def main():
 
             if (do_click(images['empty_energy'], 0.7)):
                 print('Pegaxy without energy, waiting 1 hour...')
-                time.sleep(configs['wait_for_energy_recharge'])
+                time.sleep(70*60)
                 print('Refreshing page...')
                 pyautogui.hotkey('ctrl', 'f5')
                 time.sleep(5)
@@ -156,8 +157,8 @@ def main():
                 print('Starting race...')
                 break
 
-        time.sleep(30)
-        do_click(images['next_match'], 60)
+        time.sleep(40)
+        do_click(images['next_match'], 300)
         print('Next race...')
 
         time.sleep(3)
