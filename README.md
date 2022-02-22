@@ -46,7 +46,7 @@ Alguns parâmetros podem ser configurados no arquivo configs.yaml
 
 ## Paga um café?
 
-O mercado de NFTs no Brasil está crescendo, e é nosso papel ajudar e fortalecer os projetos da comunidade para que mais ideias e ferramentas de otimização possam surgir.
+O mercado de NFTs no Brasil está crescendo, e podemos ajudar a fortalecer os projetos da comunidade para que mais ideias e ferramentas de otimização possam surgir.
 Qualquer ajuda é bem vinda.
 
 ### Wallet (Polygon / BSC):
